@@ -3,9 +3,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import styles from './page.module.css';
+import styles from '../page.module.css';
 
-export default function Home() {
+export default function Frontpage() {
   const router = useRouter();
 
   return (
@@ -46,22 +46,23 @@ export default function Home() {
       </div>
 
       <div className={styles.grid}>
-        <Link href="/frontpage" className={styles.card}>
+        <Link href="/" className={styles.card}>
           <h2>
-            Go go /frontpage <span>-&gt;</span>
+            Go Back with Link<span>-&gt;</span>
           </h2>
           <p>Find in-depth information about Next.js features and API.</p>
         </Link>
 
         <button
+          type="button"
           className={styles.card}
           onClick={(e) => {
             e.preventDefault();
-            router.push('/frontpage');
+            router.push('/');
           }}
         >
           <h2>
-            Learn <span>-&gt;</span>
+            Go back with Router <span>-&gt;</span>
           </h2>
           <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
         </button>
